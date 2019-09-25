@@ -1,0 +1,436 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Digital Studio - Разработка Web-сайтов</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="modal fade" id="form1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title text-center">Закажите обратный звонок</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="needs-validation" id="actualForm" novalidate>
+                        <div class="form-group">
+                            <input class="form-control" type="text" id="inputName" aria-describedby="nameHelp" placeholder="Ваше имя" />
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" class="form-control" id="inputPhone" aria-describedby="phoneHelp" placeholder="+7 (921) 123-45-67" />
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Email" />
+                            <div class="invalid-feedback">
+                                Введите корректный Email
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" id="inputComment" aria-describedby="commentHelp" placeholder="Комментарий" />
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="licenceCheck" checked required>
+                            <label class="form-check-label" for="exampleCheck1">
+                                Я согласен на передачу и обработку моих персональных данных в соответствии с
+                                "<a href="/legal/">Политикой по работе с персональными данными</a>"
+                            </label>
+                        </div>
+                        <div class="form-group text-center mt-3">
+                            <button type="submit" class="btn btn-primary btn-md" id="ajaxSubmit">Отправить</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-success" class="modal fade">
+        <div class="modal-dialog modal-confirm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="icon-box text-center">
+                        <i class="material-icons">&#xE876;</i>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body text-center">
+                    <h5>Сообщение успешно отправлено!</h5>
+                    <p class="pt-2 pb-0 mb-0">Наши специалисты свяжутся с Вами в ближайшее время.</p>
+                    <button class="btn btn-success mb-0 mt-4" data-dismiss="modal"><span>Ok</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light" id="myNavbar">
+                <a class="navbar-brand" href="#">
+                    <img class="img-logo" src="/img/logos/logo-main.png">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link mr-2" href="#our-services-id">Услуги</a>
+                        </li>
+                        <li class="nav-item mr-2">
+                            <a class="nav-link" href="#our-works">Наши работы</a>
+                        </li>
+                        <li class="nav-item mr-4">
+                            <a class="nav-link" href="#benefits">Преимущества</a>
+                        </li>
+                        <li class="nav-item mr-2 ml-lg-4 pt-2">
+                            <!--<a class="phone" href="tel:+78124480892">+7 (812) 448-08-92</a>-->
+                            <p class="phone">+7 (812) 448-08-92</p>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div class="jumbotron jumbotron-fluid hero">
+        <div class="container">
+            <h1>Разработка уникальных сайтов</h1>
+            <p class="lead">Увеличивающих продажи Вашего бизнеса</p>
+            <p class="lead">
+                <a class="btn btn-primary btn-lg" href="#" role="button" data-toggle="modal" data-target="#form1">Узнать больше</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="container our-services" id="our-services-id">
+        <div class="row mt-4 mb-4">
+            <div class="col">
+                <h3 class="text-center mb-3">Наши услуги</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-12 mb-0 mb-md-4 d-flex align-items-stretch">
+                <div class="card mb-2 mb-lg-0">
+                    <div class="card-body my-card-container">
+                        <img class="card-img-left" src="img/icons/web-development.png">
+                        <h5 class="card-title mt-3">Разработка сайтов</h5>
+                        <p>Имеем большой опыт разработки сайтов любой сложности - от простых лендингов до крупных Web-порталов.</p>
+                        <div class="overlay">
+                            <ul class="overlay-text">
+                                <li>Лендинг &asymp; 50 000 ₽</li>
+                                <li>Сайт-визитка &asymp; 70 000 ₽</li>
+                                <li>Корпоративный сайт &asymp; 100 000 ₽</li>
+                                <li>Интернет-магазин &asymp; 150 000 ₽</li>
+                                <li>Web-портал &asymp; от 400 000 ₽</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 mb-0 mb-md-4 d-flex align-items-stretch">
+                <div class="card mb-2 mb-lg-0">
+                    <div class="card-body my-card-container">
+                        <img class="card-img-left" src="img/icons/design.png">
+                        <h5 class="card-title mt-3">Разработка дизайна</h5>
+                        <p>Создаем уникальный дизайн на основании специфики Вашего бизнеса. Создаем интерактивные UI/UX, которыми приятно пользоваться.</p>
+                        <div class="overlay">
+                            <ul class="overlay-text">
+                                <li>Фирменный стиль &asymp; 25 000 ₽</li>
+                                <li>Логотип &asymp; 10 000 ₽</li>
+                                <li>UI/UX &asymp; 10 000 ₽</li>
+                                <li>Брендбук &asymp; 100 000 ₽</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 mb-0 mb-md-4 d-flex align-items-stretch">
+                <div class="card mb-2 mb-lg-0">
+                    <div class="card-body my-card-container">
+                        <img class="card-img-left" src="img/icons/mobile-app.png">
+                        <h5 class="card-title mt-3">Создание мобильных приложений</h5>
+                        <p>Проектируем и реализовываем мобильные приложения любой сложности.</p>
+                        <div class="overlay">
+                            <p class="overlay-text pl-4">
+                                Стоимость разработки мобильных приложений сильно зависит от предъявляемых требований.
+                                Оговаривается с заказчиком индивидуально.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 mb-0 mb-md-4 d-flex align-items-stretch">
+                <div class="card mb-2 mb-lg-0">
+                    <div class="card-body my-card-container">
+                        <img class="card-img-left" src="img/icons/seo.png">
+                        <h5 class="card-title mt-3">Интернет-реклама и SEO</h5>
+                        <p>Внедряем рекламные кампании и проводим SEO-оптимизацию сайтов.</p>
+                        <div class="overlay">
+                            <ul class="overlay-text">
+                                <li>Настройка Интернет-рекламы &asymp; 10 000 ₽</li>
+                                <li>SEO-оптимизация &asymp; 10 000 ₽</li>
+                                <li>Поддержка &asymp; 5 000 ₽ / мес.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid greyrow">
+        <div class="row mt-4 pt-4">
+            <div class="col text-center" ">
+                <h3>Узнайте больше о предоставляемых услугах и ценах!</h3>
+            </div>
+        </div>
+        <div class="row mt-4 pb-4">
+            <div class="col text-center">
+                <button class="btn btn-primary btn-lg" type="button" data-toggle="modal" data-target="#form1">Узнать больше</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid portfolio" id="our-works">
+        <div class="row mt-4 mb-4 pt-2">
+            <div class="col">
+                <h3 class="text-center">Примеры наших работ</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-sm-6 col-sm-12 mt-sm-2">
+                <div class="portfolio-item">
+                    <a href="http://artstomdv.ru/" target="_blank">
+                        <img class="img-fluid img-thumbnail portfolio-img" src="img/portfolio/artstom.ru.jpg" />
+                        <div class="text-over-image">
+                            <div class="inner-text-over-image">
+                                <h4>Стоматология "АртСтом"</h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 col-sm-12 mt-sm-2">
+                <div class="portfolio-item">
+                    <a href="https://www.ankorsamara.ru/" target="_blank">
+                        <img class="img-fluid img-thumbnail portfolio-img" src="img/portfolio/ankor.png" />
+                        <div class="text-over-image">
+                            <div class="inner-text-over-image">
+                                <h4>ООО "Анкор"</h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 col-sm-12 mt-sm-2">
+                <div class="portfolio-item">
+                    <a href="http://bel-roza.ru" target="_blank">
+                        <img class="img-fluid img-thumbnail portfolio-img" src="img/portfolio/bel_rosa.ru.jpg" />
+                        <div class="text-over-image">
+                            <div class="inner-text-over-image">
+                                <h4>Клиника "Белая Роза"</h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4 .d-none .d-sm-block">
+            <div class="col-lg-4 col-sm-6 col-sm-12">
+                <div class="portfolio-item">
+                    <a href="http://олимпишка.рф" target="_blank">
+                        <img class="img-fluid img-thumbnail portfolio-img" src="img/portfolio/olympishka.jpg" />
+                        <div class="text-over-image">
+                            <div class="inner-text-over-image">
+                                <h4>Образовательный портал "Олимпишка"</h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 col-sm-12 mt-sm-2">
+                <div class="portfolio-item">
+                    <a href="http://xn-----7kcbalm3axca8ahjk0ar0ea9g.xn--p1ai/" target="_blank">
+                        <img class="img-fluid img-thumbnail portfolio-img" src="img/portfolio/piccola.png" />
+                        <div class="text-over-image">
+                            <div class="inner-text-over-image">
+                                <h4>Piccola Роллы</h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 col-sm-12 mt-sm-2">
+                <div class="portfolio-item">
+                    <a href="http://amir.flowers/" target="_blank">
+                        <img class="img-fluid img-thumbnail portfolio-img" src="img/portfolio/amir.png" />
+                        <div class="text-over-image">
+                            <div class="inner-text-over-image">
+                                <h4>Цветочный магазин "Ароматный мир"</h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container benefits" id="benefits">
+        <div class="row mt-4 mb-4">
+            <div class="col">
+                <h3 class="text-center mb-3">Наши преимущества</h3>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-lg-3 col-md-6 col-sm-12 d-flex align-items-stretch">
+                <div class="card text-center mb-3 mb-lg-0">
+                    <div class="card-body">
+                        <img class="card-img-top" src="img/icons/medal.png">
+                        <h5 class="card-title mt-3">Большой опыт работы</h5>
+                        <p class="card-text text-justify mt-3">За 3 года существования на рынке нашей компанией успешно выполнено более 50 проектов.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 d-flex align-items-stretch">
+                <div class="card mb-3 mb-lg-0">
+                    <div class="card-body text-center">
+                        <img class="card-img-top" src="img/icons/creative-design.png">
+                        <h5 class="card-title mt-3">Уникальные дизайнерские решения</h5>
+                        <p class="card-text text-justify mt-3">Наши стилистические оформление в точности соответствуют специфике Вашего бизнеса.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 d-flex align-items-stretch">
+                <div class="card mb-3 mb-lg-0">
+                    <div class="card-body text-center">
+                        <img class="card-img-top" src="img/icons/adaptive.png">
+                        <h5 class="card-title mt-3">Адаптивный дизайн</h5>
+                        <p class="card-text text-justify mt-3">Создаваемые сайты ориентированы на любой тип устройств</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 d-flex align-items-stretch">
+                <div class="card mb-3 mb-lg-0">
+                    <div class="card-body text-center">
+                        <img class="card-img-top" src="img/icons/prices.png">
+                        <h5 class="card-title mt-3">Низкие цены</h5>
+                        <p class="card-text text-justify mt-3">Нам удается снизить себестоимость наших услуг за счет высокой эффективности работы нашей команды по методологии Agile</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row text-center mt-4">
+            <div class="col">
+                <h3>Оставьте заявку и наши специалисты ответят на все Ваши вопросы!</h3>
+            </div>
+        </div>
+        <div class="row text-center mt-4 mb-4">
+            <div class="col">
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#form1">Оставить заявку</button>
+            </div>
+        </div>
+    </div>
+    <footer class="container-fluid">
+        <div class="row">
+            <div class="col text-center mt-4 mb-3">
+                <p class="mb-1">Digital Studio &copy;&nbsp;2015 - 2019</p>
+                <p class="pt-0">+7 (812) 448-08-92</p>
+            </div>
+        </div>
+    </footer>
+    <!--
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Add smooth scrolling to all links
+            $(".nav-link").on('click', function (event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 600, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+        });
+        
+        $(document).ready(function () {
+            $("#actualForm").on('submit', function () {
+                var thisForm = document.getElementById("actualForm");
+                var isValid = thisForm.checkValidity();
+                if (isValid === true) {
+                    var inputEmail = document.getElementById("inputEmail").value;
+                    var inputPhone = document.getElementById("inputPhone").value;
+                    var inputName = document.getElementById("inputName").value;
+                    var inputComment = document.getElementById("inputComment").value;
+                    var vars = "inputEmail=" + inputEmail + "&inputPhone=" + inputPhone + "&inputName=" + inputName + "&inputComment=" + inputComment;
+                    var hr = new XMLHttpRequest();
+                    hr.open("POST", "http://dig-studio.ru/php/mailer.php", true);
+                    hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                    hr.onreadystatechange = function () {
+                        //alert(hr.readyState + ":" + hr.status);
+                        //if (hr.readyState == 4 && hr.status == 200) {
+                        if (hr.readyState == 4 && hr.status == 200) {
+                            //alert("Recieved success");
+                            $('#modal-success').modal('show');
+                        }
+                    };
+                    hr.send(vars);
+                    $('#form1').modal('hide');
+                } else {
+                    //event.preventDefault();
+                    //event.stopPropagation();
+                }
+                thisForm.classList.add('was-validated');
+                //alert(vars);
+            });
+        });
+        
+        /* 
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+        */
+    </script>
+</body>
+</html>
